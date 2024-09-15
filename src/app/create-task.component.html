@@ -1,0 +1,67 @@
+<div class="create-task-container">
+    <h2>{{ isEditing ? 'Update Task' : 'Create New Task' }}</h2>
+    <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+        <div class="form-group">
+            <label for="startTime">Start Time:</label>
+            <div class="date-range">
+                <input 
+                    type="datetime-local" 
+                    id="StartTime" 
+                    name="startTime" 
+                    [(ngModel)]="task.startTime" 
+                    required
+                    placeholder="Select start time" 
+                    title="Start Time">
+                <span class="separator">-</span>
+                <input 
+                    type="datetime-local" 
+                    id="EndTime" 
+                    name="endTime" 
+                    [(ngModel)]="task.endTime" 
+                    required
+                    placeholder="Select end time" 
+                    title="End Time">
+            </div>
+        </div>
+
+        <div class="form-group frequency-group">
+            <label>Frequency:</label>
+            <div class="frequency-options">
+                <label>
+                    <input 
+                        type="radio" 
+                        name="frequency" 
+                        value="weekly" 
+                        required
+                        title="Weekly Frequency"> Weekly
+                </label>
+                <label>
+                    <input 
+                        type="radio" 
+                        name="frequency" 
+                        value="daily" 
+                        required
+                        title="Daily Frequency"> Daily
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="frequency">Repeat Every:</label>
+            <div class="repeat-section">
+                <input 
+                    type="number" 
+                    id="repeat" 
+                    name="repeat" 
+                    [(ngModel)]="task.frequency" 
+                    [defaultValue]="1" 
+                    required
+                    placeholder="Enter number of days"
+                    title="Repeat every">
+                <span>day.</span>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!taskForm.valid">Save Task</button>
+    </form>
+</div>

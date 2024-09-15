@@ -1,0 +1,25 @@
+<!-- task.component.html -->
+<div class="task-group">
+    <button [routerLink]="['/create-task']">Create Task</button>
+    <table>
+        <thead>
+      <tr>
+        <th>Task ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Duration</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks">
+        <td> {{task.id}}</td>
+        <td>{{ task.startTime | date: 'yyyy-MM-dd HH:mm'}}</td>
+        <td>{{ task.endTime | date: 'yyyy-MM-dd HH:mm' }}</td>
+        <td>{{ task.duration }}</td>
+        <td><button [routerLink]="['/create-task', task.id]">Edit</button></td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,71 @@
+/* reports.component.css */
+
+.reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .reports-table th,
+  .reports-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .reports-table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .reports-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reports-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .reports-table td {
+    color: #333;
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .reports-table {
+      width: 100%;
+      border: 0;
+    }
+  
+    .reports-table thead {
+      display: none;
+    }
+  
+    .reports-table tr {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .reports-table td {
+      display: block;
+      text-align: right;
+      font-size: 14px;
+      border: none;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .reports-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 10px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+  }
+  

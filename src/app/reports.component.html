@@ -1,0 +1,16 @@
+<!-- reports.component.html -->
+<h2>Reports</h2>
+<table class="reports-table">
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let report of logs">
+        <td data-label="Time">{{ report.time }}</td>
+        <td data-label="Message">{{ report.message }}</td>
+    </tr>
+  </tbody>
+</table>

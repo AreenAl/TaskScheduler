@@ -1,0 +1,22 @@
+<div class="calendar-container">
+  <!-- Modal Template for Task Details -->
+  <ng-template #taskModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Task Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Task:</strong> {{ selectedTask?.title }}</p>
+      <p><strong>Start Time:</strong> {{ selectedTask?.start | date: 'short' }}</p>
+      <p><strong>End Time:</strong> {{ selectedTask?.end | date: 'short' }}</p>
+    </div>
+  </ng-template>
+
+  <!-- Navigation Buttons -->
+  <div class="calendar-navigation">
+    <button (click)="prevMonth()">Previous Month</button>
+    <button (click)="nextMonth()">Next Month</button>
+  </div>
+</div>

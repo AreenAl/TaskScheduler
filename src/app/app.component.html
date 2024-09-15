@@ -1,0 +1,24 @@
+<div class="home">
+    <aside class="sidebar">
+      <nav>
+        <ul>
+        <li><a routerLink="/tasks">Tasks</a></li>
+        <li><a routerLink="/calendar">Calendar</a></li>
+        <li><a routerLink="/reports">Reports</a></li>
+      </ul>
+    </nav>
+    </aside>
+    <main class="content">
+        <h1 *ngIf="showWelcome">Welcome to the Task Manager</h1>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  
+  <!-- Optionally include this section if needed for debugging -->
+  <!--
+  <div *ngFor="let task of tasks">
+    <div>{{task.id}}</div>
+    <div>{{task.endDate}}</div>
+  </div>
+  -->
+  
